@@ -6,11 +6,7 @@ var numeric_validation_form_id = "4923015";
 
 $(document).ready(function (e) {
 
-    if(window.location.href.indexOf(numeric_validation_form_id) > -1) {
-        $('*[id^="id123-control'+phone_cid+'"]').keypress(function (event) {
-            phone_number_actions();
-        });
-    }
+   alert("funciona :D");
 
 });
 
