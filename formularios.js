@@ -1,5 +1,5 @@
-$(document).ready(function (e) {
+$(document).ready(
 
-    alert("Hola prro");
+    alert("Hola prro")
 
-});
+);
