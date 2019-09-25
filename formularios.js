@@ -1,5 +1,4 @@
-$(document).ready(function (e) {
-
-   alert("funciona :D");
-
+$( document ).ready(function() {
+    console.log( "ready!" );
+    alert("funciona :D");
 });
