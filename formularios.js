@@ -1,9 +1,27 @@
-var script = document.createElement('script');
-script.src = 'http://code.jquery.com/jquery-1.11.0.min.js';
-script.type = 'text/javascript';
-document.getElementsByTagName('head')[0].appendChild(script);
+(function() {
+    var startingTime = new Date().getTime();
+    // Load the script
+    var script = document.createElement("SCRIPT");
+    script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js';
+    script.type = 'text/javascript';
+    document.getElementsByTagName("head")[0].appendChild(script);
 
-$( document ).ready(function() {
-    console.log( "ready!" );
-    alert("funciona :D");
-});
+    // Poll for jQuery to come into existance
+    var checkReady = function(callback) {
+        if (window.jQuery) {
+            callback(jQuery);
+        }
+        else {
+            window.setTimeout(function() { checkReady(callback); }, 20);
+        }
+    };
+
+    // Start polling...
+    checkReady(function($) {
+        $(function() {
+            var endingTime = new Date().getTime();
+            var tookTime = endingTime - startingTime;
+            window.alert("jQuery is loaded, after " + tookTime + " milliseconds!");
+        });
+    });
+})();
